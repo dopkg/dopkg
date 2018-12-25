@@ -35,7 +35,7 @@ It pulls the `dopkg/runner` images and makes sure that the working dir is mounte
 
 # How to use 
 
-Please refer to [dopkg-example](https://github.com/dopkg/dopkg-example-app) for a working example.
+Please refer to [dopkg-example-app](https://github.com/dopkg/dopkg-example-app) for a working example.
 
 # Credits
 
