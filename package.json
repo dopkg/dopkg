@@ -1,0 +1,31 @@
+{
+  "name": "dopkg",
+  "version": "1.0.0",
+  "description": "Run node apps in small docker containers using zeit/pkg",
+  "license": "MIT",
+  "repository": "https://github.com/dopkg/dopkg",
+  "author": "Yuan Tao <towyuan@outlook.com>",
+  "keywords": [
+    "dcoker",
+    "pkg",
+    "node",
+    "app",
+    "bin"
+  ],
+  "bin": {
+    "dopkg": "./bin/dopkg.js"
+  },
+  "scripts": {
+    "build-builder": "docker build -t dopkg/builder:latest ./builder",
+    "push-builder": "docker push dopkg/builder:latest",
+    "run-builder": "docker run -it --name dopkg-builder -v $(pwd):/app/ -v $(pwd)/.pkg-cache:/root/.pkg-cache --rm dopkg/builder:latest",
+    "build-runner": "docker build -t dopkg/runner:latest ./runner",
+    "push-runner": "docker push dopkg/runner:latest",
+    "run-runner": "docker run -it --name dopkg-runner -v $(pwd):/app/ -v $(pwd)/.pkg-cache:/root/.pkg-cache --rm dopkg/runner:latest"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=10.0.0"
+  }
+}
